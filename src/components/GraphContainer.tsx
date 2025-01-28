@@ -1,3 +1,8 @@
+import PostFormat from "./graphs/formatGraph"
+import PostDay from "./graphs/dayGraph"
+import PostTopic from "./graphs/topicGraph"
+// import { dummyData } from "@/types/chartTypes"
+
 export default function Graphs({ currGraph }: { currGraph: string }){
     return(
         <div style={{ border: '2px solid black', padding: '10px', borderRadius: '8px' }}>
@@ -5,13 +10,15 @@ export default function Graphs({ currGraph }: { currGraph: string }){
                 <div>Select from filter</div>
             )}
             {currGraph == '1' && (
-                <div>This tells about influencer post by FORMAT(video/reel/photo)</div>
+                <PostFormat />
             )}
             {currGraph == '2' && (
-                <div>This tells about influencer post by TOPIC</div>
+                <div style={{ textAlign: "center", padding: "20px" }}>
+                    <PostTopic />
+                </div> 
             )}
             {currGraph == '3' && (
-                <div>This tells about influencer post by DAY(Monday,Tuesday,Thursday)</div>
+                <PostDay/>
             )}
         </div>
     )
